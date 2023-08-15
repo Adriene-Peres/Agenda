@@ -1,0 +1,44 @@
+
+        while (x != 0) {
+            if (x == 1) {
+                System.out.print("Insira o nome do contato: ");
+                nome = ent.nextLine();
+                System.out.print("\nInsira o endereço do contato: ");
+                endereco = ent.nextLine();
+                System.out.print("\nInsira o email do contato: ");
+                email = ent.nextLine();
+                System.out.print("\nInsira o cpf do contato: ");
+                cpf = ent.nextLine();
+                System.out.print("\nInsira o estado cívil do contato: ");
+                estado_civil = ent.nextLine();
+
+                a.addContato(new PessoaFisica(nome, endereco, email, cpf, estado_civil));
+
+            } else if (x == 2) {
+                System.out.print("Insira o nome do contato: ");
+                nome = ent.nextLine();
+                System.out.print("\nInsira o endereço do contato: ");
+                endereco = ent.nextLine();
+                System.out.print("\nInsira o email do contato: ");
+                email = ent.nextLine();
+                System.out.print("\nInsira o cpf do contato: ");
+                cnpj = ent.nextLine();
+                System.out.print("\nInsira o estado cívil do contato: ");
+                inscricao_estadual = ent.nextInt();
+
+                a.addContato(new PessoaJuridica(nome, endereco, email, cnpj, inscricao_estadual));
+
+            } else if (x == 3) {
+                System.out.print("\nInsira o cpf ou cnpj do contato que deseja remover: ");
+                String l = ent.nextLine();
+
+            } else {
+                a.visualizarContatos();
+            }
+
+            System.out.println("Deseja fazer mais alguma ação?");
+            System.out.print(
+                    "0 - Sair\n1 - Adicionar contato Pessoa Física\n2 - Adicionar Contato Pessoa Juridica\n3 - Remover contato\n4 - Vizualizar contatos\n");
+            x = ent.nextInt();
+        }
+    }
